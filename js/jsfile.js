@@ -34,6 +34,17 @@ number.addEventListener('input',function(){
 })
 
 
+const pwd = document.querySelector('#pwd');
+const pwdError = document.querySelector('.pwd-error');
+pwd.addEventListener('input', function() {
+let pass = RegExp('^[A-Z a-z]{8}$')
+if (pass.test(pwd.value))
+    pwdError.textContent = "";
+  else
+    pwdError.textContent = "Wrong password";
+});
+
+
 const salary = document.querySelector('#salary');
 const output = document.querySelector('.salary-output');
 output.textContent=salary.value;
